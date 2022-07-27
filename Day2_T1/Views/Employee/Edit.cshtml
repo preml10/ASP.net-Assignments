@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@using Day1_T1.Models
+@model Employee
+
+<h3> Edit Employee </h3>
+<form action="/Employee/Create" method=" post">
+    <label>E_Id : </label>
+    <input name ="E_Id" type = "text" readonly value="@Model.E_Id"/>
+    <br />
+    <br />
+
+    <label>E_Name : </label>
+    <input name ="E_Name" type = "text"/ value=" @Model.E_Name">
+    <br />
+    <br />
+
+    <label>Job Designation : </label>
+    <input name ="Job" type = "text" value=" @Model.Job"/>
+    <br />
+    <br />
+
+    <label>Salary : </label>
+    <input name ="Salary" type = "text" value=" @Model.Salary"/>
+    <br />
+    <br />
+
+    <label>Department Number : </label>
+    <input name ="Dept_No" type = "text" value="@Model.Dept_No"/>
+    <br />
+    <br />
+
+    <input type="submit" value="Edit"/>
+
+
+</form>
+
+@if(ViewBag.RequestType=="POST")
+{
+    <h2>@ViewBag.ErrorMessage</h2>
+}
+
+    
+<a href="/Employee/Employee_Page">Back to Emplyees</a>
